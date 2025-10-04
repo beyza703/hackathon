@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atık Kıyafet Firması</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #80799c;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: flex-end; 
+      background-color: #bfb1f0;
+      padding: 15px 40px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin-left: 25px;
+      font-size: 16px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .navbar a:hover {
+      color: #270c4ed6;
+    }
+
+    /* Hero Bölümü */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 50px;
+      padding: 80px 20px;
+      flex-wrap: wrap; 
+      background-color: #fff;
+    }
+
+    .hero-text {
+      max-width: 500px;
+    }
+
+    .hero-text h1 {
+      font-size: 48px;
+      font-weight: bold;
+      color: #3e2049;
+      margin-bottom: 20px;
+    }
+
+    .hero-text p {
+      font-size: 18px;
+      color: #050545;
+      line-height: 1.6;
+    }
+
+    .hero-image img {
+      width: 400px;
+      max-width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    /* Fiyatlandırma / Sarı Kartlar */
+    .pricing-section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .pricing-section h2 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .pricing-section h3 {
+      font-size: 20px;
+      color: #260c47;
+      margin-bottom: 40px;
+    }
+
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 60px;
+    }
+
+    .card {
+      background-color: #643fa0;
+      padding: 20px;
+      width: 250px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    }
+
+    .card h2 {
+      margin-bottom: 15px;
+      font-size: 24px;
+    }
+
+    .card ul {
+      list-style: none;
+      padding: 0;
+      text-align: left;
+    }
+
+    .card ul li {
+      margin-bottom: 10px;
+    }
+
+    /* Akordeon Bölümleri */
+    .accordion-section {
+      max-width: 800px;
+      margin: 0 auto 80px;
+      text-align: left;
+      padding: 0 20px;
+    }
+
+    .accordion {
+      background-color: #7e5e80;
+      color: #333;
+      cursor: pointer;
+      padding: 18px;
+      width: 100%;
+      border: none;
+      border-radius: 8px;
+      text-align: left;
+      outline: none;
+      font-size: 20px;
+      transition: background-color 0.3s;
+      margin-bottom: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+
+    .accordion:hover {
+      background-color: #6d105a;
+    }
+
+    .accordion.active {
+      background-color: #ffd700;
+    }
+
+    .panel {
+      padding: 0 18px;
+      background-color: #fff;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+      border-radius: 0 0 8px 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      margin-bottom: 10px;
+    }
+
+    .panel p {
+      padding: 15px 0;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero {
+        flex-direction: column; 
+        text-align: center;
+      }
+
+      .hero-image img {
+        width: 80%;
+      }
+
+      .card {
+        width: 80%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <a href="#anasayfa">Ana Sayfa</a>
+    <a href="#hakkimizda">Hakkımızda</a>
+    <a href="#pricing">Fiyatlandırma</a>
+    <a href="#projeler">Projeler</a>
+    <a href="#neler">Neler Yapıyoruz</a>
+  </div>
+
+  <!-- Hero / Hakkımızda -->
+  <section class="hero" id="anasayfa">
+    <div class="hero-text">
+      <h1>Dünya'yı İyileştirelim</h1>
+      <p>
+        Siz de Fark Yaratın.
+      </p>
+    </div>
+    <div class="hero-image">
+      <img src="https://www.sepas.com.tr/uploads/image/b454b1d2-58fd-4140-9089-1b97914966ea.jpg" alt="Firma Görseli">
+    </div>
+  </section>
+
+  <!-- Fiyatlandırma -->
+  <section class="pricing-section" id="pricing">
+    <h2>Fiyatlandırma</h2>
+    <h3>İhtiyacınıza uygun planları seçin</h3>
+    <div class="card-container">
+      <div class="card">
+        <h2>Temel Plan</h2>
+        <ul>
+          <li>Özellik 1</li>
+          <li>Özellik 2</li>
+          <li>Özellik 3</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>Standart Plan</h2>
+        <ul>
+          <li>Özellik 1</li>
+          <li>Özellik 2</li>
+          <li>Özellik 3</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>Profesyonel Plan</h2>
+        <ul>
+          <li>Özellik 1</li>
+          <li>Özellik 2</li>
+          <li>Özellik 3</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projeler & Neler Yapıyoruz -->
+  <section class="accordion-section" id="projeler">
+    <button class="accordion">Projeler</button>
+    <div class="panel">
+      <p>Geçmiş projelerimiz arasında okullar için yalıtım malzemesi üretimi, sosyal konut projeleri ve atık tekstil geri dönüşümü bulunmaktadır.</p>
+    </div>
+
+    <button class="accordion" id="neler">Neler Yapıyoruz</button>
+    <div class="panel">
+      <p>Kıyafetleri topluyor, işliyor ve geri dönüştürerek binaların yalıtımında kullanıyoruz.</p>
+    </div>
+  </section>
+
+  <script>
+    // Akordeon JS
+    const accordions = document.querySelectorAll(".accordion");
+    accordions.forEach(acc => {
+      acc.addEventListener("click", function() {
+        this.classList.toggle("active");
+        const panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
